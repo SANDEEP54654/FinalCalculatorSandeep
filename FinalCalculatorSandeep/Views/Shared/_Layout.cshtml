@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - FinalCalculatorSandeep</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" />
+	<link rel="stylesheet" href="~/css/home.css" />
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+			<div class="container">
+				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FinalCalculatorSandeep</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+					<ul class="navbar-nav flex-grow-1">
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+						</li>
+
+						@if (@User.Identity.Name != null)
+						{
+							@if (@User.Identity.Name.Length > 10)
+							{
+								<li class="nav-item">
+									<p style="color: green;
+margin-bottom: 0px;
+margin-top: 8px;
+padding-right: 30px;">@User.Identity.Name</p>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+								</li>
+							}
+							else
+							{
+								<li class="nav-item">
+									<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+								</li>
+								<li class="nav-item">
+
+									<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+								</li>
+							}
+
+
+						}
+						else
+						{
+							<li class="nav-item">
+								<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+							</li>
+							<li class="nav-item">
+
+								<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+							</li>
+						}
+
+
+
+
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="container">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
+
+	<footer class="border-top footer text-muted">
+		<div class="container">
+			&copy; 2022 - FinalCalculatorSandeep - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+		</div>
+	</footer>
+	<style type="text/css">
+		.nav-item {
+			min-width: 100px;
+		}
+	</style>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+
+
+
+	<script>
+		$(document).ready(function () {
+			$('#txtvalue').keypress(function (event) {
+				var keycode = (event.keyCode ? event.keyCode : event.which);
+			});
+			GetData();
+
+		});
+
+		function GetData() {
+			var Calculation = "";
+			$.ajax({
+					type: "POST",
+					url: '/Home/GetcalculateData',
+					data: JSON.stringify(Calculation),
+					contentType: "application/json; charset=utf-8",
+					dataType: "json",
+					success: onsuccessGetcal,
+					failure: function (resdata) {
+						alert(data.responseText);
+					},
+					error: function (data) {
+						alert(data.responseText);
+					}
+				});
+		}
+
+		function onsuccessGetcal(responsedata) {
+			var data = responsedata["ResultData"];
+			if (data != "") {
+			   document.getElementById("historycalcdata").innerHTML = data;
+			}
+			else {
+				document.getElementById("historycalcdata").innerHTML = "No details found";
+			}
+		}
+
+
+
+
+		var data = "";
+
+		function caldata(mydata) {
+
+			if (mydata == "/") {
+				data = data + mydata;
+				if (data != "") {
+					document.getElementById("txtvalue").value = data;
+				}
+				else {
+					document.getElementById("txtvalue").value = "0";
+				}
+			}
+			else if (mydata == "*") {
+				data = data + mydata;
+				if (data != "") {
+					document.getElementById("txtvalue").value = data;
+				}
+				else {
+					document.getElementById("txtvalue").value = "0";
+				}
+			}
+			else if (mydata == "+") {
+				data = data + mydata;
+				if (data != "") {
+					document.getElementById("txtvalue").value = data;
+				}
+				else {
+					document.getElementById("txtvalue").value = "0";
+				}
+			}
+			else if (mydata == "-") {
+				data = data + mydata;
+				if (data != "") {
+					document.getElementById("txtvalue").value = data;
+				}
+				else {
+					document.getElementById("txtvalue").value = "0";
+				}
+			}
+			else if (mydata == "%") {
+				data = data + mydata;
+				if (data != "") {
+					document.getElementById("txtvalue").value = data;
+				}
+				else {
+					document.getElementById("txtvalue").value = "0";
+				}
+			}
+			else if (mydata == ".") {
+				data = data + mydata;
+				if (data != "") {
+					document.getElementById("txtvalue").value = data;
+				}
+				else {
+					document.getElementById("txtvalue").value = "0";
+				}
+			}
+			else if (mydata == "=") {
+				  var Calculation = { CData: data };
+
+				$.ajax({
+					type: "POST",
+					url: '/Home/calculateData',
+					data: JSON.stringify(Calculation),
+					contentType: "application/json; charset=utf-8",
+					dataType: "json",
+					success: onsuccessdatacal,
+					failure: function (resdata) {
+						alert(data.responseText);
+					},
+					error: function (data) {
+						alert(data.responseText);
+					}
+				});
+			}
+			else if (mydata == "clr") {
+				data = "";
+				sumdata = "0";
+				if (data != "") {
+					document.getElementById("txtvalue").value = data;
+				}
+				else {
+					document.getElementById("txtvalue").value = "0";
+				}
+			}
+			else {
+				data = data + "" + parseInt(mydata)
+				if (data != "") {
+					document.getElementById("txtvalue").value = data;
+				}
+				else {
+					document.getElementById("txtvalue").value = "0";
+				}
+			}
+		}
+
+		function onsuccessdatacal(responsedata) {
+			var calcdata = data;
+			data = responsedata["ResultData"];
+			if (data != "") {
+				document.getElementById("txtvalue").value = data;
+				GetData();
+			}
+			else {
+				document.getElementById("txtvalue").value = "0";
+			}
+		}
+
+
+
+		function Validate(event) {
+			var regex = new RegExp("^[0-9]");
+			var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+			if (!regex.test(key)) {
+				event.preventDefault();
+				return false;
+			}
+		}
+
+		function validatedata() {
+			data = document.getElementById("txtvalue").value;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+﻿
+.historydata {
+    width: 100%;
+    border: 1px solid #eee;
+    border-spacing: 0px;
+}
+
+.historydata td {
+    padding: 10px;
+    font-size: 15px;
+    text-align: left;
+    border: 1px solid #eee;
+    background: #fff;
+}
+
+.headertr td {
+    background: #dbfffe;
+}
+
+
+
+@media only screen and (max-width: 5668px) {
+    .divclassleft {
+        width: 38%;
+        font-family: Calibri;
+        letter-spacing: 0.4px;
+        margin: 5%;
+        background: #ffefcf;
+        min-height: 320px;
+        padding: 10px;
+        border-radius: 13px;
+        box-shadow: 1px 2px 3px 4px #ddd;
+        float: left;
+        min-height: 420px;
+    }
+
+    .divclassright {
+        width: 38%;
+        background: #ffefcf;
+        font-family: Calibri;
+        letter-spacing: 0.4px;
+        margin: 5%;
+        min-height: 320px;
+        padding: 10px;
+        border-radius: 13px;
+        box-shadow: 1px 2px 3px 4px #ddd;
+        float: right;
+        min-height: 420px;
+    }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .divclassleft {
+        width: 96%;
+        font-family: Calibri;
+        letter-spacing: 0.4px;
+        margin: 2%;
+        background: #fdfdfd;
+        min-height: 320px;
+        padding: 10px;
+        border-radius: 13px;
+        box-shadow: 1px 2px 3px 4px #ddd;
+        float: left;
+    }
+
+    .divclassright {
+        width: 96%;
+        font-family: Calibri;
+        letter-spacing: 0.4px;
+        margin: 2%;
+        background: #fdfdfd;
+        min-height: 320px;
+        padding: 10px;
+        border-radius: 13px;
+        box-shadow: 1px 2px 3px 4px #ddd;
+        float: left;
+    }
+}
+
+.buttondatatbl {
+    width: 100%;
+}
+
+    .buttondatatbl td {
+        padding: 5px;
+        text-align: center;
+    }
+
+
+.btndata {
+    background: #eeb035;
+    padding: 5px;
+    font-size: 24px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+    box-shadow: 1px 2px 3px 4px #eee;
+}
+
+    .btndata:hover {
+        background: #dbfffe;
+    }
+
+.equall {
+    background: #d5d123;
+}

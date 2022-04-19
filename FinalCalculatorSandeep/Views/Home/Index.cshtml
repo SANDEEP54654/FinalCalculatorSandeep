@@ -1,0 +1,98 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+
+	@if (@User.Identity.Name != null)
+	{
+		@if (@User.Identity.Name.Length > 10)
+		{
+			<div style="width: 100%; padding: 5px; float: left;">
+
+				<div class="divclassleft">
+
+					<p style="text-align: center; font-weight: 600; font-size: 18px; margin-top: 5px; padding: 10px; background: #dfb844; color: #fff;">
+						Sandeep Kour Calculator
+					</p>
+					<br />
+					<br />
+					<input id="txtvalue" value="0" type="text" onkeypress="return Validate(event);" onchange="validatedata();" style="width: 86%; height: 34px; margin-left: 5%; font-size: 20px; font-weight: 600; text-align: right; padding: 4px; font-size: 16px;" />
+					<br />
+					<br />
+					<table class="buttondatatbl">
+						<tr>
+							<td>
+								<button class="btndata" onclick="caldata('1');" accesskey="1">1</button>
+							</td>
+							<td>
+								<button class="btndata" onclick="caldata('2');" accesskey="2">2</button>
+							</td>
+							<td>
+								<button class="btndata" onclick="caldata('3');" accesskey="3">3</button>
+							</td>
+							<td>
+								<button class="btndata" onclick="caldata('/');" accesskey="4">/</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button class="btndata" onclick="caldata('4');" accesskey="4">4</button>
+							</td>
+							<td>
+								<button class="btndata" onclick="caldata('5');" accesskey="5">5</button>
+							</td>
+							<td>
+								<button class="btndata" onclick="caldata('6');" accesskey="6">6</button>
+							</td>
+							<td>
+								<button class="btndata" onclick="caldata('*');" accesskey="*">X</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button class="btndata" onclick="caldata('7');" accesskey="7">7</button>
+							</td>
+							<td>
+								<button class="btndata" onclick="caldata('8');" accesskey="8">8</button>
+							</td>
+							<td>
+								<button class="btndata" onclick="caldata('9');" accesskey="9">9</button>
+							</td>
+							<td>
+								<button class="btndata" onclick="caldata('+');" accesskey="+">+</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button class="btndata" onclick="caldata('0');" accesskey="0">0</button>
+							</td>
+							<td>
+								<button class="btndata" onclick="caldata('-');" accesskey="-">-</button>
+							</td>
+							<td>
+								<button class="btndata" onclick="caldata('clr');" accesskey="c">clr</button>
+							</td>
+							<td>
+								<button class="btndata equall" onclick="caldata('=');" accesskey="=">=</button>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+
+				<div class="divclassright">
+					<p style="text-align: center; font-weight: 600; font-size: 18px; margin-top: 5px; padding: 10px; background: #dfb844; color: #fff;">
+						Current History
+					</p>
+					<div id="historycalcdata"></div>
+
+				</div>
+			</div>
+
+		}
+	}
+
+
+	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

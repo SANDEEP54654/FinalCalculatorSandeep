@@ -1,0 +1,51 @@
+USE [SandeepCalculator]
+GO
+/****** Object:  Table [dbo].[CalculationHistory]    Script Date: 19-04-2022 23:26:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[CalculationHistory](
+	[Data] [varchar](50) NULL,
+	[Result] [varchar](50) NULL,
+	[RDate] [datetime] NULL
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[UserRegistration]    Script Date: 19-04-2022 23:26:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[UserRegistration](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[Username] [varchar](150) NULL,
+	[Password] [varchar](50) NULL,
+	[ConfirmPassword] [varchar](50) NULL,
+	[Email] [varchar](150) NULL,
+ CONSTRAINT [PK__UserRegi__1788CC4C186CDA6C] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[CalculationHistory] ([Data], [Result], [RDate]) VALUES (N'6+6', N'12.00', CAST(N'2022-04-19 23:20:06.543' AS DateTime))
+GO
+INSERT [dbo].[CalculationHistory] ([Data], [Result], [RDate]) VALUES (N'12.00*4', N'48.00', CAST(N'2022-04-19 23:20:26.467' AS DateTime))
+GO
+SET IDENTITY_INSERT [dbo].[UserRegistration] ON 
+
+GO
+INSERT [dbo].[UserRegistration] ([UserId], [Username], [Password], [ConfirmPassword], [Email]) VALUES (1, N'Sandeep', N'123456', N'123456', N'sandeep54654@gmail.com')
+GO
+SET IDENTITY_INSERT [dbo].[UserRegistration] OFF
+GO
