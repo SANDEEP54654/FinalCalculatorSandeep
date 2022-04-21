@@ -25,6 +25,7 @@ namespace FinalCalculatorSandeep.Controllers
             _logger = logger;
         }
 
+        
 
         public IActionResult Index()
         {
@@ -57,8 +58,7 @@ namespace FinalCalculatorSandeep.Controllers
             objCalculationResponse.ResultData = ReturnData;
             return Json(objCalculationResponse);
         }
-
-
+      
         public ActionResult calculateData([FromBody] Calculation objCalData)
         {
             String Data = objCalData.CData.Trim();

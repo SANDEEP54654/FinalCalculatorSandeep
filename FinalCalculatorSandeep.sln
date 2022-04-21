@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalCalculatorSandeep", "FinalCalculatorSandeep\FinalCalculatorSandeep.csproj", "{0C5CD9F7-E3DE-4A71-9B0B-A9D5AFE2CA30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalCalculatorSandeep", "FinalCalculatorSandeep\FinalCalculatorSandeep.csproj", "{0C5CD9F7-E3DE-4A71-9B0B-A9D5AFE2CA30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestFCSandeep", "UnitTestFCSandeep\UnitTestFCSandeep.csproj", "{5F5A0222-0834-4709-8E3C-986FC9BA5297}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0C5CD9F7-E3DE-4A71-9B0B-A9D5AFE2CA30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C5CD9F7-E3DE-4A71-9B0B-A9D5AFE2CA30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C5CD9F7-E3DE-4A71-9B0B-A9D5AFE2CA30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F5A0222-0834-4709-8E3C-986FC9BA5297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F5A0222-0834-4709-8E3C-986FC9BA5297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F5A0222-0834-4709-8E3C-986FC9BA5297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F5A0222-0834-4709-8E3C-986FC9BA5297}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

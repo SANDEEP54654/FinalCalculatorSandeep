@@ -16,6 +16,9 @@ namespace FinalCalculatorSandeep.Controllers
         {
             _auc = auc;
         }
+
+      
+
         public IActionResult Register()
         {
             return View();
